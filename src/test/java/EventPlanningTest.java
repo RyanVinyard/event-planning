@@ -9,40 +9,90 @@ public class EventPlanningTest {
   public void runEventPlanning_displaySoloParty_ArrayList() {
     EventPlanning testEventPlanning = new EventPlanning();
     List<Object> expectedOutput = new ArrayList<Object>();
-    expectedOutput.add("You're looking at a solo party with the estimated cost of a cheap bottle of wine!");
-    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(1));
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(1, "none", "none", "self", 1));
   }
+
+  //I commonly found myself going back and changing these tests after each step, which I don't think is right. How do I assure these tests still pass if I'm changing the number of inputs from one int, to an int and a string, etc?
 
   @Test
   public void runEventPlanning_displayHouseParty_ArrayList() {
     EventPlanning testEventPlanning = new EventPlanning();
     List<Object> expectedOutput = new ArrayList<Object>();
-    expectedOutput.add("You're looking at a standard house party, just like when you were in college! It won't cost anything to hold it in your own house.");
-    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(20));
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(20, "none", "none", "self", 1));
   }
 
   @Test
   public void runEventPlanning_displayLargeParty_ArrayList() {
     EventPlanning testEventPlanning = new EventPlanning();
     List<Object> expectedOutput = new ArrayList<Object>();
-    expectedOutput.add("You're looking at a large wedding-style party you can't hold in your house! Renting out a place is going to cost you in the ballpark of $80 per hour.");
-    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(50));
+    expectedOutput.add(80);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(50, "none", "none", "self", 1));
   }
 
   @Test
   public void runEventPlanning_displayHugeParty_ArrayList() {
     EventPlanning testEventPlanning = new EventPlanning();
     List<Object> expectedOutput = new ArrayList<Object>();
-    expectedOutput.add("This looks like a big corporate party, which is going to require you to rent out a large indoor or outdoor area to hold everyone. I hope you're working off company funds, because this is probably going to cost $1000 at minimum.");
-    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(100));
+    expectedOutput.add(1000);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(100, "none", "none", "self", 1));
   }
 
   @Test
   public void runEventPlanning_displayGiganticParty_ArrayList() {
     EventPlanning testEventPlanning = new EventPlanning();
     List<Object> expectedOutput = new ArrayList<Object>();
-    expectedOutput.add("What you're trying to do here is have an event open to the public. You're going to have to rent out a city block for certain. You'll need to talk to the local government, and it's probably going to cost at least $10,000.");
-    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(500));
+    expectedOutput.add(10000);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(500, "none", "none", "self", 1));
+  }
+
+  @Test
+  public void runEventPlanning_displayDrinkCostMath_ArrayList() {
+    EventPlanning testEventPlanning = new EventPlanning();
+    List<Object> expectedOutput = new ArrayList<Object>();
+    expectedOutput.add(80);
+    expectedOutput.add(500);
+    expectedOutput.add(0);
+    expectedOutput.add(0);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(50, "beer", "none", "self", 1));
+  }
+
+  @Test
+  public void runEventPlanning_displayFoodCostMath_ArrayList() {
+    EventPlanning testEventPlanning = new EventPlanning();
+    List<Object> expectedOutput = new ArrayList<Object>();
+    expectedOutput.add(80);
+    expectedOutput.add(500);
+    expectedOutput.add(130);
+    expectedOutput.add(0);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(50, "beer", "snacks", "self", 1));
+  }
+
+  @Test
+  public void runEventPlanning_displayEntertainmentCostMath_ArrayList() {
+    EventPlanning testEventPlanning = new EventPlanning();
+    List<Object> expectedOutput = new ArrayList<Object>();
+    expectedOutput.add(160);
+    expectedOutput.add(500);
+    expectedOutput.add(130);
+    expectedOutput.add(160);
+    assertEquals(expectedOutput, testEventPlanning.runEventPlanning(50, "beer", "snacks", "dj", 2));
   }
   // @Test
   // public void runEventPlanning_displayExtraNoFood_int() {
