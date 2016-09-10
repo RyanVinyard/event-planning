@@ -1,5 +1,6 @@
 import java.io.Console;
 import java.util.List;
+import java.util.ArrayList;
 
 public class App {
   public static void main(String[] args) {
@@ -17,11 +18,16 @@ public class App {
     String entertainment = myConsole.readLine();
     System.out.println("Finally, how long (in hours) do you expect this to go for?");
     String stringTime = myConsole.readLine();
-    int time = Integer.parseInt(stringPeople);
+    int time = Integer.parseInt(stringTime);
     EventPlanning eventPlanning = new EventPlanning();
     List<Object> eventPlanningResult = eventPlanning.runEventPlanning(people, drink, food, entertainment, time);
+    System.out.println(people);
+    System.out.println(drink);
+    System.out.println(food);
+    System.out.println(entertainment);
+    System.out.println(time);
     System.out.println(eventPlanningResult);
-
+    //This front end logic does not work. It is returning an array containing only the first entry (number of people) run through the eventPlanning method.
 
       }
     }
