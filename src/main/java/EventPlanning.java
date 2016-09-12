@@ -9,7 +9,7 @@ public class EventPlanning {
 
   public List<Object> runEventPlanning(int howManyPeople, String howMuchDrink, String howMuchFood, String howMuchEntertainment, int howLong){
     List<Object> result = new ArrayList<Object>();
-    if (howManyPeople == 1) {
+    if (howManyPeople.equals(1) {
       result.add(0);
     } else if (howManyPeople > 1 && howManyPeople < 30) {
       result.add(0);
@@ -21,35 +21,35 @@ public class EventPlanning {
       result.add(10000);
     }
 
-    if (howMuchDrink == "none") {
+    if (howMuchDrink.equals("none") {
       result.add(0);
-    } else if (howMuchDrink == "beer") {
+    } else if (howMuchDrink.equals("beer") {
       result.add((10*howManyPeople));
-    } else if (howMuchDrink == "paid bar") {
+    } else if (howMuchDrink.equals("paid bar") {
       result.add((100*howLong));
-    } else if (howMuchDrink == "open bar") {
+    } else if (howMuchDrink.equals("open bar") {
       result.add(((100)+(25*howManyPeople)));
     }
 
-    if (howMuchFood == "none") {
+    if (howMuchFood.equals("none") {
       result.add(0);
-    } else if (howMuchFood == "snacks") {
+    } else if (howMuchFood.equals("snacks") {
       result.add((30+(2*howManyPeople)));
-    } else if (howMuchFood == "appetizers") {
+    } else if (howMuchFood.equals("appetizers") {
       result.add((50+(5*howManyPeople)));
-    } else if (howMuchFood == "dinner") {
+    } else if (howMuchFood.equals("dinner") {
       result.add((100+(10*howManyPeople)));
-    } else if (howMuchFood == "buffet") {
+    } else if (howMuchFood.equals("buffet") {
       result.add((250+(15*howManyPeople)));
     }
 
-    if (howMuchEntertainment == "self") {
+    if (howMuchEntertainment.equals("self") {
       result.add(0);
-    } else if (howMuchEntertainment == "dj") {
+    } else if (howMuchEntertainment.equals("dj") {
       result.add((80*howLong));
-    } else if (howMuchEntertainment == "local music") {
+    } else if (howMuchEntertainment.equals("local music") {
       result.add((100*howLong));
-    } else if (howMuchEntertainment == "big name band") {
+    } else if (howMuchEntertainment.equals("big name band") {
       result.add((5000+(10*howLong)));
     }
     return result;
