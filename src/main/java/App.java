@@ -21,12 +21,9 @@ public class App {
     int time = Integer.parseInt(stringTime);
     EventPlanning eventPlanning = new EventPlanning();
     List<Object> eventPlanningResult = eventPlanning.runEventPlanning(people, drink, food, entertainment, time);
-    System.out.println(people);
-    System.out.println(drink);
-    System.out.println(food);
-    System.out.println(entertainment);
-    System.out.println(time);
-    System.out.println(eventPlanningResult);
+    for (Object eventItem : eventPlanningResult) {
+      System.out.println(eventItem);
+    }
     //This front end logic does not work. It is returning an array containing only the first entry (number of people) run through the eventPlanning method.
 
       }
