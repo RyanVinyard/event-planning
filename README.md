@@ -17,7 +17,7 @@ _Using this application, the user can enter in basic information about an event 
 
 ## Known Bugs
 
-_Application is unfinished as I work out how to make it function correctly._
+_No current known bugs_
 
 ## Support and contact details
 
