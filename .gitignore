@@ -36,3 +36,5 @@ Thumbs.db
 ############
 build/
 .gradle/
+.gradle/2.9
+.gradle/2.9/taskArtifacts
