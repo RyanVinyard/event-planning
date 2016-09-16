@@ -6,9 +6,9 @@ import java.util.List;
 public class EventPlanningTest {
 
   @Test
-  public void getPeople_returns_True() {
-    EventPlanning testEventPlanning = new EventPlanning(30, "", "", "");
-    assertEquals((Integer)30, testEventPlanning instanceof EventPlanning);
+  public void eventPlanning_instantiatesCorrectly_True() {
+    EventPlanning testEventPlanning = new EventPlanning(30, " ", " ", " ");
+    assertEquals(true, testEventPlanning instanceof EventPlanning);
   }
 
   // @Test
