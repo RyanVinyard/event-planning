@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class EventPlanning {
   private Integer mPeople;
   private String mFood;
@@ -35,7 +31,6 @@ public class EventPlanning {
 
   public int totalCost(){
     Integer result = 0;
-
 
     if (mPeople.equals(1)) {
       result += 0;
@@ -81,27 +76,5 @@ public class EventPlanning {
       result += (5000+(10*mLength));
     }
     return result;
-    
-
-
-
   }
-
 }
-
-// public class EventPlanning {
-//
-//   public List<Object> runEventPlanning(Integer howManyPeople, String howMuchDrink, String howMuchFood, String howMuchEntertainment, int howLong){
-//     List<Object> result = new ArrayList<Object>();
-//     if (howManyPeople.equals(1)) {
-//       result.add(0);
-
-//
-
-//
-
-//
-
-//
-//   }
-// }
