@@ -10,7 +10,7 @@ _Using this application, the user can enter in basic information about an event 
 
 ## Setup/Installation Requirements
 
-* _Clone from github repo at https://github.com/RyanVinyard/event-planning _
+* _Clone from github repo at https://github.com/RyanVinyard/event-planning_
 * _Compile and run code_
 * _Use command line for prompts_
 
