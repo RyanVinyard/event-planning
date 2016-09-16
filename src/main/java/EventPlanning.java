@@ -71,7 +71,17 @@ public class EventPlanning {
       result += ((100)+(25*mPeople));
     }
 
+    if (mEntertainment.equals("self")) {
+      result += 0;
+    } else if (mEntertainment.equals("dj")) {
+      result += (80*mLength);
+    } else if (mEntertainment.equals("local music")) {
+      result += (100*mLength);
+    } else if (mEntertainment.equals("big name band")) {
+      result += (5000+(10*mLength));
+    }
     return result;
+    
 
 
 
@@ -91,16 +101,7 @@ public class EventPlanning {
 //
 
 //
-//     if (howMuchEntertainment.equals("self")) {
-//       result.add(0);
-//     } else if (howMuchEntertainment.equals("dj")) {
-//       result.add((80*howLong));
-//     } else if (howMuchEntertainment.equals("local music")) {
-//       result.add((100*howLong));
-//     } else if (howMuchEntertainment.equals("big name band")) {
-//       result.add((5000+(10*howLong)));
-//     }
-//     return result;
+
 //
 //   }
 // }

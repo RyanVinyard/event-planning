@@ -47,6 +47,18 @@ public class EventPlanningTest {
     assertEquals(290, testEventPlanning.totalCost());
   }
 
+  @Test
+  public void totalPrice_returnCorrectMathOnDrinks_int() {
+    EventPlanning testEventPlanning = new EventPlanning(50, "snacks", "beer", "self", 2);
+    assertEquals(790, testEventPlanning.totalCost());
+  }
+
+  @Test
+  public void totalPrice_returnCorrectmathOnEntertainment_int() {
+    EventPlanning testEventPlanning = new EventPlanning(50, "snacks", "beer", "dj", 2);
+    assertEquals(950, testEventPlanning.totalCost());
+  }
+
   // @Test
   // public void runEventPlanning_displaySoloParty_ArrayList() {
   //   EventPlanning testEventPlanning = new EventPlanning();
