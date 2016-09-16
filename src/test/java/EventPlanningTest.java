@@ -11,6 +11,30 @@ public class EventPlanningTest {
     assertEquals(true, testEventPlanning instanceof EventPlanning);
   }
 
+  @Test
+  public void getPeople_returnNumberOfPeople_int() {
+    EventPlanning testEventPlanning = new EventPlanning(30, "snacks", "beer", "dj");
+    assertEquals((Integer)30, testEventPlanning.getPeople());
+  }
+
+  @Test
+  public void getPeople_returnFood_String() {
+    EventPlanning testEventPlanning = new EventPlanning(30, "snacks", "beer", "dj");
+    assertEquals("snacks", testEventPlanning.getFood());
+  }
+
+  @Test
+  public void getPeople_returnDrinks_String() {
+    EventPlanning testEventPlanning = new EventPlanning(30, "snacks", "beer", "dj");
+    assertEquals("beer", testEventPlanning.getDrinks());
+  }
+
+  @Test
+  public void getPeople_returnNumberEntertainment_String() {
+    EventPlanning testEventPlanning = new EventPlanning(30, "snacks", "beer", "dj");
+    assertEquals("dj", testEventPlanning.getEntertainment());
+  }
+
   // @Test
   // public void runEventPlanning_displaySoloParty_ArrayList() {
   //   EventPlanning testEventPlanning = new EventPlanning();
