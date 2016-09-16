@@ -7,12 +7,14 @@ public class EventPlanning {
   private String mFood;
   private String mDrinks;
   private String mEntertainment;
+  private Integer mLength;
 
-  public EventPlanning(Integer people, String food, String drinks, String entertainment) {
+  public EventPlanning(Integer people, String food, String drinks, String entertainment, Integer length) {
     mPeople = people;
     mFood = food;
     mDrinks = drinks;
     mEntertainment = entertainment;
+    mLength = length;
   }
 
   public Integer getPeople() {
@@ -31,6 +33,49 @@ public class EventPlanning {
     return mEntertainment;
   }
 
+  public int totalCost(){
+    Integer result = 0;
+
+
+    if (mPeople.equals(1)) {
+      result += 0;
+    } else if (mPeople > 1 && mPeople < 30) {
+      result += 0;
+    } else if (mPeople >= 30 && mPeople < 80) {
+      result += (80*mLength);
+    } else if (mPeople >= 80 && mPeople < 300) {
+      result += (1000);
+    } else if (mPeople >= 300) {
+      result += (10000);
+    }
+
+    if (mFood.equals("none")) {
+      result += 0;
+    } else if (mFood.equals("snacks")) {
+      result += (30+(2*mPeople));
+    } else if (mFood.equals("appetizers")) {
+      result += (50+(5*mPeople));
+    } else if (mFood.equals("dinner")) {
+      result += (100+(10*mPeople));
+    } else if (mFood.equals("buffet")) {
+      result += (250+(15*mPeople));
+    }
+
+    if (mDrinks.equals("none")) {
+      result += 0;
+    } else if (mDrinks.equals("beer")) {
+      result += (10*mPeople);
+    } else if (mDrinks.equals("paid bar")) {
+      result += (100*mLength);
+    } else if (mDrinks.equals("open bar")) {
+      result += ((100)+(25*mPeople));
+    }
+
+    return result;
+
+
+
+  }
 
 }
 
@@ -40,37 +85,11 @@ public class EventPlanning {
 //     List<Object> result = new ArrayList<Object>();
 //     if (howManyPeople.equals(1)) {
 //       result.add(0);
-//     } else if (howManyPeople > 1 && howManyPeople < 30) {
-//       result.add(0);
-//     } else if (howManyPeople >= 30 && howManyPeople < 80) {
-//       result.add((80*howLong));
-//     } else if (howManyPeople >= 80 && howManyPeople < 300) {
-//       result.add(1000);
-//     } else if (howManyPeople >= 300) {
-//       result.add(10000);
-//     }
+
 //
-//     if (howMuchDrink.equals("none")) {
-//       result.add(0);
-//     } else if (howMuchDrink.equals("beer")) {
-//       result.add((10*howManyPeople));
-//     } else if (howMuchDrink.equals("paid bar")) {
-//       result.add((100*howLong));
-//     } else if (howMuchDrink.equals("open bar")) {
-//       result.add(((100)+(25*howManyPeople)));
-//     }
+
 //
-//     if (howMuchFood.equals("none")) {
-//       result.add(0);
-//     } else if (howMuchFood.equals("snacks")) {
-//       result.add((30+(2*howManyPeople)));
-//     } else if (howMuchFood.equals("appetizers")) {
-//       result.add((50+(5*howManyPeople)));
-//     } else if (howMuchFood.equals("dinner")) {
-//       result.add((100+(10*howManyPeople)));
-//     } else if (howMuchFood.equals("buffet")) {
-//       result.add((250+(15*howManyPeople)));
-//     }
+
 //
 //     if (howMuchEntertainment.equals("self")) {
 //       result.add(0);
